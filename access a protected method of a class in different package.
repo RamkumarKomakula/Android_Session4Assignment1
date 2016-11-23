@@ -1,0 +1,29 @@
+Package1;
+class C1
+{
+
+protected void printing()
+{
+System.out.println("Ram");
+}
+}
+
+
+package2;
+class C2 extends C1
+{
+public static void main(String[] args)
+{
+C1 c1inst=new C1();
+Method m = c1inst.getClass().getDeclaredMethod("printing", null);
+m.setAccessible(true);
+m.invoke(null);
+}
+}
+
+
+
+
+Output: 
+        After Ignoring the warning it prints
+        "Ram"
